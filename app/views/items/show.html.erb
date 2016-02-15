@@ -3,3 +3,4 @@
 <p><b>価格：<%= @item.price %></b></p>
 <p><b>売り手ID：<%= @item.seller_id %></b></p>
 <p><b>電子メール：<%= @item.email %></b></p>
+<%= link_to '削除',item_path(@item), method: :delete %>

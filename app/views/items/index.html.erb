@@ -1,6 +1,9 @@
 <h2>一覧</h2>
 <ul>
 <% @items.each do |item| %>
-    <li><%= link_to item.name, item_path(item.id) %></li>
+    <li>
+        <%= link_to item.name, item_path(item.id) %>
+        <span id="alert"><%= link_to '削除する', item_path(item.id), method: :delete %></span>
+    </li>
 <% end %>
 </ul>

@@ -27,6 +27,12 @@ class ItemsController < ApplicationController
         redirect_to @item
     end
 
+    def destroy
+        @item = Item.find(params[:id])
+        @item.destroy
+        redirect_to items_url #rake routesでプレフィックスを確認
+    end
+
     private
     def item_params
         params.require(:item).permit(:name, :description, :price, :seller_id, :email, :image_url)
